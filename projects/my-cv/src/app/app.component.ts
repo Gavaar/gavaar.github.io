@@ -8,5 +8,4 @@ import * as profileImg from '../assets/profile.base64img';
 })
 export class AppComponent {
   title = 'my-cv';
-  profileImg: string = profileImg.profileImg;
 }
