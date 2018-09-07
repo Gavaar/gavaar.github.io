@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import * as profileImg from '../assets/profile.base64img';
 
 @Component({
   selector: 'app-root',

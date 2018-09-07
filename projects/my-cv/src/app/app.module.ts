@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 //my components and modules
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { NavbarModule } from 'my-libs/navbar/navbar.module';
+import { GavNavbarModule } from 'my-libs/gav-navbar/gav-navbar.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { NavbarModule } from 'my-libs/navbar/navbar.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NavbarModule
+    GavNavbarModule
   ],
   providers: [
     //empty so far

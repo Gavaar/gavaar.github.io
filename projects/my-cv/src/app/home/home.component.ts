@@ -6,6 +6,6 @@ import * as profileImg from '../../assets/profile.base64img';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent { 
     profileImg: string = profileImg.profileImg;
- }
+}

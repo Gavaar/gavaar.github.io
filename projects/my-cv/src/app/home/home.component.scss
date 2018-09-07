@@ -1,3 +1,22 @@
 img { //change this when you have a good grasp on what you're going to do
     border-radius: 50%;
 }
+
+#home-container {
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+
+    div#left-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+
+        div#profile-pic {
+            position: relative;
+            text-align: center;
+        }
+    }
+
+}
