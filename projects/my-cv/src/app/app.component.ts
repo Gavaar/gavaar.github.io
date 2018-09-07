@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import * as profileImg from '../assets/profile.base64img';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,4 @@ import * as profileImg from '../assets/profile.base64img';
 })
 export class AppComponent {
   title = 'my-cv';
-  profileImg: string = profileImg.profileImg;
 }
