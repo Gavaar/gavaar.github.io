@@ -1,15 +1,17 @@
 <h1>Home Component Title -- Have to add Title here (need component title)</h1>
 <div id="home-container">  
-    <div id="left-panel">  
+    <div id="left-panel" class="mat-elevation-z4">  
         <div id="profile-pic">
-            <h1>Francisco Santorelli</h1>
-            <img width="300" alt="Angular Logo" src={{profileImg}}>
+            <gav-title title="Francisco Santorelli"></gav-title>
+            <gav-hexagon-container
+                [background]="profileImg">
+            </gav-hexagon-container>
         </div>
         <div>
             <h2>Basic Information about me goes here</h2>
         </div>
     </div>
-    <div id="right-panel">
+    <div id="right-panel" class="mat-elevation-z4">
         <h2>Main Skills part of the site</h2>
     </div>
 </div>

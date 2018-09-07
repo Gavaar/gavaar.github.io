@@ -1,7 +1,3 @@
-img { //change this when you have a good grasp on what you're going to do
-    border-radius: 50%;
-}
-
 #home-container {
     height: auto;
     display: flex;
@@ -11,11 +7,20 @@ img { //change this when you have a good grasp on what you're going to do
         display: flex;
         flex-direction: column;
         justify-content: center;
+        background: whitesmoke;
         height: 100%;
 
         div#profile-pic {
             position: relative;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+
+            gav-hexagon-container {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+            }
         }
     }
 

@@ -1,0 +1,7 @@
+.words {
+    display: inline-block;
+
+    &::first-letter {
+        color: green;
+    }
+}
