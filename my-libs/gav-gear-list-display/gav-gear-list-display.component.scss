@@ -1,0 +1,10 @@
+#skill-list {
+    display: flex;
+    flex-flow: column;
+
+    .skill {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-evenly;
+    }
+}

@@ -1,17 +1,18 @@
 <h1>Home Component Title -- Have to add Title here (need component title)</h1>
 <div id="home-container">  
-    <div id="left-panel" class="mat-elevation-z4">  
+    <div id="left-panel">  
         <div id="profile-pic">
             <gav-title title="Francisco Santorelli"></gav-title>
             <gav-hexagon-container
                 [background]="profileImg">
             </gav-hexagon-container>
         </div>
-        <div>
-            <h2>Basic Information about me goes here</h2>
+        <div class="info-panel">
+            <p>{{basicInfo}}</p>
         </div>
     </div>
-    <div id="right-panel" class="mat-elevation-z4">
-        <h2>Main Skills part of the site</h2>
+    <div id="right-panel">
+        <gav-title title="Main Skills"></gav-title>
+        <gav-gear-list-display></gav-gear-list-display>
     </div>
 </div>

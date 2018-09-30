@@ -11,6 +11,5 @@ export class GavTitleComponent implements OnInit {
 
     ngOnInit() {
         this.words = this.title.split(" ");
-        console.log(this.words);
     }
  }

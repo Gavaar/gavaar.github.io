@@ -5,10 +5,11 @@
 
     div#left-panel {
         display: flex;
-        flex-direction: column;
+        flex-flow: column;
         justify-content: center;
-        background: whitesmoke;
         height: 100%;
+        max-width: 30vw;
+        text-align: center;
 
         div#profile-pic {
             position: relative;
@@ -17,11 +18,25 @@
             margin: 0 auto;
 
             gav-hexagon-container {
-                width: 200px;
-                height: 200px;
+                width: 20vw;
+                height: 20vw;
                 margin: 0 auto;
             }
         }
+
+        div.info-panel {
+            border-top: 2px solid darkgreen;
+            margin-top: 15px;
+            padding: 0 20px 0;
+        }
+    }
+
+    div#right-panel {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        height: 100%;
+        max-width: 60vw;
     }
 
 }
