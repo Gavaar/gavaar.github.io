@@ -1,10 +1,74 @@
-#skill-list {
+:host-context(#my-cv){
+    $cv-green: rgba(0, 63, 0, 1);
+    $cv-green-light: rgb(76, 209, 76);
+
+    #skill-list {
+    position: relative;
     display: flex;
     flex-flow: column;
+    height: 100%;
+    z-index: 1;
 
-    .skill {
+        .skill {
+            display: flex;
+            flex-flow: row;
+            justify-content: flex-start;
+
+            gear-style {
+                color: $cv-green-light;
+                opacity: 1;
+                cursor: pointer;
+                z-index: 1;
+            }
+
+            .skill-title {
+                margin-left: 1em;
+                margin-right: 1em;
+                max-height: calc(min-content + 0.2em);
+                font-weight: 700;
+                border-bottom: 1px solid $cv-green;
+            }
+
+            .rating {
+                .mat-icon.material-icons {
+                    font-size: 2em;
+                    color: $cv-green;
+                }
+            }
+        }
+
+        p {
+            display: flex;
+            margin-left: 2em;
+
+            &.open {
+                transform: rotateX(0deg);
+                transition: 500ms;
+            }
+
+            &.closed {
+                margin-top:0;
+                margin-bottom:0;
+                height: 0px;
+                opacity: 0;
+                padding: 0;
+                transform: rotateX(90deg);
+                transition: 500ms;
+            }
+        }
+
+        #chain {
+            position: absolute;
+            height: 100%;
+            border-right: 3px dashed darkgrey;
+            margin-top: 0;
+            margin-left: 0.6em;
+            z-index: 0;
+        }
+    }
+
+    #bottom-gear {
         display: flex;
-        flex-flow: row;
-        justify-content: space-evenly;
+        align-self: flex-start;
     }
 }

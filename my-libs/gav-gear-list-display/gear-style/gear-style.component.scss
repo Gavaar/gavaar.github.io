@@ -1,0 +1,81 @@
+$value: 1.5em;
+$grey-color: rgb(104, 104, 104);
+
+.parent{
+    display: flex;
+    height: auto;
+    z-index: 1;
+  }
+  
+  .gear{
+    position: relative;
+    width: $value;
+    height: $value;
+    margin: auto;
+    background: $grey-color;
+    border-radius: 50%;
+  }
+  
+  .gear .center{
+    position: absolute;
+    top: $value/4;
+    left: $value/4;
+    z-index: 10;
+    width: $value/2;
+    height: $value/2;
+    background: $grey-color;
+    border-radius: 50%;
+
+    :nth-child(1) {
+        position: absolute;
+        top: -($value*0.1666666);
+        lefT: -($value*0.1666666);
+    }
+  }
+  
+    .open  {
+        .tooth{
+            transform: rotate(45deg);
+            transition: 500ms;
+        }
+        
+        .tooth:nth-child(2){
+            transform: rotate(90deg);
+            transition: 500ms;
+        }
+        
+        .tooth:nth-child(3){
+            transform: rotate(135deg);
+            transition: 500ms;
+        }
+        
+        .tooth:nth-child(4){
+            transform: rotate(180deg);
+            transition: 500ms;
+        }
+    }
+
+    .tooth{
+        position: absolute;
+        top: -($value*0.125);
+        left: $value*0.375;
+        width: $value*0.225;
+        height: $value*1.25;
+        background:$grey-color;
+        transition: 500ms;
+    }
+        
+    .tooth:nth-child(2){
+        transform: rotate(45deg);
+        transition: 500ms;
+    }
+        
+    .tooth:nth-child(3){
+        transform: rotate(90deg);
+        transition: 500ms;
+    }
+        
+    .tooth:nth-child(4){
+        transform: rotate(135deg);
+        transition: 500ms;
+    }

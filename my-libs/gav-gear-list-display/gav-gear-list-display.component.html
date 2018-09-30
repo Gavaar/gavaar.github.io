@@ -1,6 +1,10 @@
-<div id="skill-list">
-    <div class="skill">
-        <mat-icon>home</mat-icon> <div>Skill Title</div> <div> Skill Amount </div>
+<div id="skill-list" *ngFor="let skill of skillList; let i = index">
+    <div class="skill" (click)="skill.show = !skill.show" [ngClass]="{'open': skill.show, 'closed': skill.show == false}">
+        <gear-style><mat-icon>{{ skill.icon }}</mat-icon></gear-style>
+        <div class="skill-title">{{skill.skill}}</div>
+        <div class="rating"><mat-icon *ngFor="let unit of numberToArray(skill.rating)">label_important</mat-icon></div>
     </div>
-    <p>description goes here</p>
+    <p [ngClass]="{'open': skill.show, 'closed': !skill.show}">{{ skill.description }}</p>
+    <div id="chain"></div>
 </div>
+<gear-style id="bottom-gear"></gear-style>

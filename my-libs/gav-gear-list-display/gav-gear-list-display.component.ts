@@ -11,4 +11,13 @@ import { Skill } from './gav-gear-list-display.model';
 export class GavGearListDisplayComponent {
     
     @Input()skillList: Skill[];
+
+    numberToArray(num) {
+        let someArr = [];
+        for (let i = 0; i < num; i++) {
+            someArr.push(i);
+        }
+        return someArr;
+    }
+
 }

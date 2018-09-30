@@ -11,5 +11,5 @@ import { Skill } from 'my-libs/gav-gear-list-display/gav-gear-list-display.model
 export class HomeComponent { 
     profileImg: string = profileImg.profileImg;
     basicInfo: string = homeConfig.basicInfo;
-    skillList: Skill[] = []
+    skillList: Skill[] = homeConfig.skillList;
 }
