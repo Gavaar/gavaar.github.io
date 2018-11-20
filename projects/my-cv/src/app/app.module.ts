@@ -1,11 +1,12 @@
-//angular imports
+// Angular Imports
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-//my components and modules
+// Local Imports
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { GavNavbarModule } from 'my-libs/gav-navbar/gav-navbar.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,9 @@ import { GavNavbarModule } from 'my-libs/gav-navbar/gav-navbar.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     GavNavbarModule
-  ],
-  providers: [
-    //empty so far
   ],
   bootstrap: [AppComponent]
 })

@@ -1,10 +1,10 @@
-$value: 1.5em;
-$grey-color: rgb(104, 104, 104);
+@import '../../style-variables/my-cv';
 
 .parent{
     display: flex;
     height: auto;
     z-index: 1;
+    padding-bottom: $value / 3;
   }
   
   .gear{
@@ -23,13 +23,14 @@ $grey-color: rgb(104, 104, 104);
     z-index: 10;
     width: $value/2;
     height: $value/2;
-    background: $grey-color;
+    background: #aaa;
     border-radius: 50%;
 
     :nth-child(1) {
-        position: absolute;
+        height: inherit;
+        width: inherit;
         top: -($value*0.1666666);
-        lefT: -($value*0.1666666);
+        // lefT: -($value*0.1666666);
     }
   }
   

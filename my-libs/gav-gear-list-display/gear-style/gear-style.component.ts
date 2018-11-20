@@ -10,7 +10,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       <div class="tooth"></div>
       <div class="tooth"></div>
       <div class="tooth"></div>
-    </div>  
+    </div>
   </div>
   `,
   styleUrls: ['./gear-style.component.scss'],

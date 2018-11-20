@@ -1,6 +1,6 @@
+@import '../style-variables/my-cv';
+
 :host-context(#my-cv){
-    $cv-green: rgba(0, 63, 0, 1);
-    $cv-green-light: rgb(76, 209, 76);
 
     #skill-list {
     position: relative;
@@ -13,12 +13,27 @@
             display: flex;
             flex-flow: row;
             justify-content: flex-start;
+            cursor: pointer;
 
             gear-style {
                 color: $cv-green-light;
                 opacity: 1;
-                cursor: pointer;
                 z-index: 1;
+
+                mat-icon {
+
+                    &.default-icon {
+                        position: absolute;
+                        font-size: $value;
+                        top: -0.15 * $value;
+                        left: -0.12 * $value;
+                    }
+
+                    &.svg-icon {
+                        
+                    }
+
+                }
             }
 
             .skill-title {
@@ -39,7 +54,7 @@
 
         p {
             display: flex;
-            margin-left: 2em;
+            margin-left: $value;
 
             &.open {
                 transform: rotateX(0deg);
@@ -62,7 +77,7 @@
             height: 100%;
             border-right: 3px dashed darkgrey;
             margin-top: 0;
-            margin-left: 0.6em;
+            margin-left: $value * 0.45;
             z-index: 0;
         }
     }

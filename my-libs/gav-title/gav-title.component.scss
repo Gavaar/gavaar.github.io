@@ -1,8 +1,9 @@
 .words {
     display: inline-block;
-    color: rgba(0, 0, 0, 0.87);
+    color: rgba(0, 0, 41, 0.87);
+    font-size: 30px;
 
     &::first-letter {
-        color: rgba(0, 63, 0, 0.87);
+        color: rgba(0, 41, 0, 1);
     }
 }

@@ -1,12 +1,13 @@
 #home-container {
     height: auto;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 
     div#left-panel {
         display: flex;
         flex-flow: column;
         justify-content: center;
+        margin-right: 6em;
         height: 100%;
         max-width: 30vw;
         text-align: center;
@@ -33,10 +34,13 @@
 
     div#right-panel {
         display: flex;
+        text-align: center;
         flex-flow: column;
         justify-content: center;
+        margin-left: 6em;
         height: 100%;
         max-width: 60vw;
+        font-size: 21px;
     }
 
 }

@@ -1,10 +1,9 @@
 // ANGULAR IMPORTS
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material';
 // LOCAL IMPORTS
 import { GavGearListDisplayComponent } from './gav-gear-list-display.component';
-//NODE_MODULES IMPORTS
-import { MatIconModule } from '@angular/material';
 import { GearStyleComponent } from './gear-style/gear-style.component';
 
 @NgModule({

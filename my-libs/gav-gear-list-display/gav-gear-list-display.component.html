@@ -1,6 +1,18 @@
 <div id="skill-list" *ngFor="let skill of skillList; let i = index">
     <div class="skill" (click)="skill.show = !skill.show" [ngClass]="{'open': skill.show, 'closed': skill.show == false}">
-        <gear-style><mat-icon>{{ skill.icon }}</mat-icon></gear-style>
+        <gear-style>
+            <ng-container [ngSwitch]="skill.iconType">
+
+                <mat-icon class="svg-icon" *ngSwitchCase="IconType.Svg" [svgIcon]="skill.icon"></mat-icon>
+
+                <img class="img-icon" *ngSwitchCase="IconType.Img" [src]="skill.icon">
+
+                <mat-icon *ngSwitchDefault class="default-icon">
+                    {{ skill.icon }}
+                </mat-icon>
+
+            </ng-container>
+        </gear-style>
         <div class="skill-title">{{skill.skill}}</div>
         <div class="rating"><mat-icon *ngFor="let unit of numberToArray(skill.rating)">label_important</mat-icon></div>
     </div>

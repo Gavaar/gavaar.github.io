@@ -1,8 +1,8 @@
-//angular imports
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-//my imports
-import { GavTitleComponent } from "./gav-title.component";
+// Angular Imports
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+// My Imports
+import { GavTitleComponent } from './gav-title.component';
 
 
 @NgModule({

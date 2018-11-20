@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'gav-title',
@@ -10,6 +10,6 @@ export class GavTitleComponent implements OnInit {
     words: string[];
 
     ngOnInit() {
-        this.words = this.title.split(" ");
+        this.words = this.title.split(' ');
     }
  }
