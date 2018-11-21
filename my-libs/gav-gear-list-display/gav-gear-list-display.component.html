@@ -1,5 +1,5 @@
 <div id="skill-list" *ngFor="let skill of skillList; let i = index">
-    <div class="skill" (click)="skill.show = !skill.show" [ngClass]="{'open': skill.show, 'closed': skill.show == false}">
+    <div class="skill" (click)="skill.show = !skill.show" [ngClass]="{'open': skill.show, 'closed': !skill.show}">
         <gear-style>
             <ng-container [ngSwitch]="skill.iconType">
 
@@ -14,7 +14,7 @@
             </ng-container>
         </gear-style>
         <div class="skill-title">{{skill.skill}}</div>
-        <div class="rating"><mat-icon *ngFor="let unit of numberToArray(skill.rating)">label_important</mat-icon></div>
+        <div class="rating"><mat-icon *ngFor="let unit of skill.rating">label_important</mat-icon></div>
     </div>
     <p [ngClass]="{'open': skill.show, 'closed': !skill.show}">{{ skill.description }}</p>
     <div id="chain"></div>

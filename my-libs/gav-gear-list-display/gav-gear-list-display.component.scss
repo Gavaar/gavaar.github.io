@@ -24,13 +24,14 @@
 
                     &.default-icon {
                         position: absolute;
-                        font-size: $value;
-                        top: -0.15 * $value;
-                        left: -0.12 * $value;
+                        font-size: ($value * 1em);
+                        top: -0.13em * $value;
+                        left: -0.13em * $value;
                     }
 
                     &.svg-icon {
-                        
+                        fill: $cv-green-light;
+                        transform: scale($value * 0.8) translateY(-1px);
                     }
 
                 }
@@ -54,7 +55,7 @@
 
         p {
             display: flex;
-            margin-left: $value;
+            margin-left: $value * 1em;
 
             &.open {
                 transform: rotateX(0deg);
@@ -77,7 +78,7 @@
             height: 100%;
             border-right: 3px dashed darkgrey;
             margin-top: 0;
-            margin-left: $value * 0.45;
+            margin-left: $value * 0.45em;
             z-index: 0;
         }
     }

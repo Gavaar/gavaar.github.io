@@ -6,7 +6,7 @@ export enum IconType {
 
 export interface Skill {
     skill: string;
-    rating: number;
+    rating: number | number[];
     description: string;
     icon: string;
     iconType?: IconType;
