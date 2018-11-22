@@ -8,8 +8,8 @@ import { Skill } from 'my-libs/gav-gear-list-display/gav-gear-list-display.model
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
-export class HomeComponent { 
+export class HomeComponent {
     profileImg: string = profileImg.profileImg;
     basicInfo: string = homeConfig.basicInfo;
-    skillList: Skill[] = homeConfig.skillList;
+    skillList: Array<Skill> = homeConfig.skillList;
 }
