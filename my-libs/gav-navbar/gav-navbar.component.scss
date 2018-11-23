@@ -1,0 +1,8 @@
+@import '../style-variables/my-cv';
+
+div {
+    background-color: $cv-green;
+    color: white;
+    margin: 0;
+    padding: 0.5em 0 0.5em 2em;
+}

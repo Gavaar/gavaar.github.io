@@ -1,4 +1,9 @@
-<h1>Home Component Title -- Have to add Title here (need component title)</h1>
+<!--Title-->
+<h1 id="title">
+    <mat-icon>home</mat-icon>
+    Francisco Santorelli's Website
+</h1>
+<!--Container-->
 <div id="home-container">
 
     <div id="left-panel">  
@@ -10,7 +15,7 @@
         </div>
 
         <div class="info-panel">
-            <p>{{basicInfo}}</p>
+            <p [innerHtml]="basicInfo"></p>
         </div>
     </div>
 

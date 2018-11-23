@@ -44,14 +44,15 @@
                 font-weight: 700;
                 border-bottom: 1px solid $cv-green;
                 width: 12em;
-                color: black;
-                opacity: 0.8;
+                color: $cv-black;
             }
 
             .rating {
+                display: inline-flex;
+
                 .mat-icon.material-icons {
                     font-size: 2em;
-                    color: $cv-green;
+                    color: $cv-green-light;
                 }
             }
         }

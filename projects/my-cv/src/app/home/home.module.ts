@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
+import { MatIconModule } from '@angular/material';
 // LOCAL IMPORTS
 import { HomeRouterModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
@@ -13,6 +14,7 @@ import { GavGearListDisplayModule } from 'my-libs/gav-gear-list-display/gav-gear
 @NgModule({
     imports: [
         HomeRouterModule,
+        MatIconModule,
         GavHexagonContainerModule,
         GavTitleModule,
         GavGearListDisplayModule
