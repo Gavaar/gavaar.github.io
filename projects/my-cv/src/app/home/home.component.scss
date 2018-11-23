@@ -7,10 +7,9 @@
         display: flex;
         flex-flow: column;
         justify-content: center;
-        margin-right: 6em;
         height: 100%;
         max-width: 30vw;
-        text-align: center;
+        text-align: justify;
 
         div#profile-pic {
             position: relative;
@@ -39,8 +38,13 @@
         justify-content: center;
         margin-left: 6em;
         height: 100%;
-        max-width: 60vw;
+        max-width: 40vw;
         font-size: 21px;
+
+        gav-title {
+            text-align: left;
+            margin-left: 6em;
+        }
     }
 
 }

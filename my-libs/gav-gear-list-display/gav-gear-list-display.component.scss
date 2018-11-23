@@ -8,6 +8,7 @@
     flex-flow: column;
     height: 100%;
     z-index: 1;
+    max-width: 50vw;
 
         .skill {
             display: flex;
@@ -16,7 +17,7 @@
             cursor: pointer;
 
             gear-style {
-                color: $cv-green-light;
+                color: whitesmoke;
                 opacity: 1;
                 z-index: 1;
 
@@ -24,25 +25,27 @@
 
                     &.default-icon {
                         position: absolute;
-                        font-size: ($value * 1em);
-                        top: -0.13em * $value;
-                        left: -0.13em * $value;
+                        font-size: ($value * 0.65em);
+                        top: -0.06em * $value;
+                        left: -0.07em * $value;
                     }
 
                     &.svg-icon {
-                        fill: $cv-green-light;
-                        transform: scale($value * 0.8) translateY(-1px);
+                        fill: whitesmoke;
+                        transform: scale($value * 0.65) translateY(-1px);
                     }
 
                 }
             }
 
             .skill-title {
-                margin-left: 1em;
-                margin-right: 1em;
+                margin: auto 2em;
                 max-height: calc(min-content + 0.2em);
                 font-weight: 700;
                 border-bottom: 1px solid $cv-green;
+                width: 12em;
+                color: black;
+                opacity: 0.8;
             }
 
             .rating {
@@ -55,21 +58,25 @@
 
         p {
             display: flex;
-            margin-left: $value * 1em;
+            text-align: justify;
+            margin-left: $value * 1.5em;
 
             &.open {
+                margin-top: 0.25em;
+                margin-bottom: 0.25em;
+                height: auto;
+                max-height: 500px;
                 transform: rotateX(0deg);
-                transition: 500ms;
+                transition: 500ms ease-in;
             }
 
             &.closed {
-                margin-top:0;
-                margin-bottom:0;
-                height: 0px;
+                margin-top: 0.25em;
+                margin-bottom: 0.25em;
+                max-height: 0px;
                 opacity: 0;
-                padding: 0;
                 transform: rotateX(90deg);
-                transition: 500ms;
+                transition: 500ms ease-out;
             }
         }
 

@@ -1,22 +1,24 @@
-<div id="skill-list" *ngFor="let skill of skillList; let i = index">
-    <div class="skill" (click)="skill.show = !skill.show" [ngClass]="{'open': skill.show, 'closed': !skill.show}">
-        <gear-style>
-            <ng-container [ngSwitch]="skill.iconType">
+<ng-container *ngIf="skillList">
+    <div id="skill-list" *ngFor="let skill of skillList.skills; let i = index">
+        <div class="skill" (click)="skill.show = !skill.show" [ngClass]="{'open': skill.show, 'closed': !skill.show}">
+            <gear-style>
+                <ng-container [ngSwitch]="skill.iconType">
 
-                <mat-icon class="svg-icon" *ngSwitchCase="IconType.Svg" [svgIcon]="skill.icon"></mat-icon>
+                    <mat-icon class="svg-icon" *ngSwitchCase="IconType.Svg" [svgIcon]="skill.icon"></mat-icon>
 
-                <img class="img-icon" *ngSwitchCase="IconType.Img" [src]="skill.icon">
+                    <img class="img-icon" *ngSwitchCase="IconType.Img" [src]="skill.icon">
 
-                <mat-icon *ngSwitchDefault class="default-icon">
-                    {{ skill.icon }}
-                </mat-icon>
+                    <mat-icon *ngSwitchDefault class="default-icon">
+                        {{ skill.icon }}
+                    </mat-icon>
 
-            </ng-container>
-        </gear-style>
-        <div class="skill-title">{{skill.skill}}</div>
-        <div class="rating"><mat-icon *ngFor="let unit of skill.rating">label_important</mat-icon></div>
+                </ng-container>
+            </gear-style>
+            <div class="skill-title">{{skill.skill}}</div>
+            <div class="rating"><mat-icon *ngFor="let unit of skill.rating">label_important</mat-icon></div>
+        </div>
+        <p [ngClass]="{'open': skill.show, 'closed': !skill.show}">{{ skill.description }}</p>
+        <div id="chain"></div>
     </div>
-    <p [ngClass]="{'open': skill.show, 'closed': !skill.show}">{{ skill.description }}</p>
-    <div id="chain"></div>
-</div>
+</ng-container>
 <gear-style id="bottom-gear"></gear-style>

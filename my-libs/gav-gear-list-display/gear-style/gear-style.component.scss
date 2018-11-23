@@ -23,14 +23,13 @@
     z-index: 10;
     width: 1em * $value/2;
     height: 1em * $value/2;
-    background: #aaa;
+    background: $grey-color;
     border-radius: 50%;
 
     :nth-child(1) {
         height: inherit;
         width: inherit;
         top: -(1em * $value*0.1666666);
-        // lefT: -(1em * $value*0.1666666);
     }
   }
   
