@@ -1,5 +1,5 @@
 // LOCAL IMPORTS
-import { IconType, Skills } from './../../../../../my-libs/gav-gear-list-display/gav-gear-list-display.model';
+import { IconType, Skills } from './../../../my-libs/gav-gear-list-display/gav-gear-list-display.model';
 
 export const basicInfo = `
     Currently working as a Front End Multi-Platform Developer (academic examples at <strong>
