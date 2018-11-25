@@ -2,6 +2,28 @@
 
 :host-context(#my-cv){
 
+    gear-style {
+        color: whitesmoke;
+        opacity: 1;
+        z-index: 1;
+
+        .default-icon {
+            position: absolute;
+            font-size: ($value * 0.65em);
+            top: -0.06em * $value;
+            left: -0.07em * $value;
+        }
+
+        mat-icon {
+
+            &.svg-icon {
+                fill: whitesmoke;
+                transform: scale($value * 0.65) translateY(-1px);
+            }
+
+        }
+    }
+
     #skill-list {
     position: relative;
     display: flex;
@@ -16,34 +38,11 @@
             justify-content: flex-start;
             cursor: pointer;
 
-            gear-style {
-                color: whitesmoke;
-                opacity: 1;
-                z-index: 1;
-
-                mat-icon {
-
-                    &.default-icon {
-                        position: absolute;
-                        font-size: ($value * 0.65em);
-                        top: -0.06em * $value;
-                        left: -0.07em * $value;
-                    }
-
-                    &.svg-icon {
-                        fill: whitesmoke;
-                        transform: scale($value * 0.65) translateY(-1px);
-                    }
-
-                }
-            }
-
             .skill-title {
                 margin: auto 2em;
                 max-height: calc(min-content + 0.2em);
                 font-weight: 700;
                 border-bottom: 1px solid $cv-green;
-                width: 12em;
                 color: $cv-black;
             }
 

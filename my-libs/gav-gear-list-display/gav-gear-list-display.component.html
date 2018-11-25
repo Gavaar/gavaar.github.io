@@ -1,6 +1,6 @@
 <ng-container *ngIf="skillList">
     <div id="skill-list" *ngFor="let skill of skillList.skills; let i = index">
-        <div class="skill" (click)="skill.show = !skill.show" [ngClass]="{'open': skill.show, 'closed': !skill.show}">
+        <div class="skill" (click)="skillExpand(skill)" [ngClass]="{'open': skill.show, 'closed': !skill.show}">
             <gear-style>
                 <ng-container [ngSwitch]="skill.iconType">
 
@@ -21,4 +21,8 @@
         <div id="chain"></div>
     </div>
 </ng-container>
-<gear-style id="bottom-gear"></gear-style>
+<gear-style id="bottom-gear">
+    <mat-icon *ngIf="showArrowCollapse" class="default-icon" (click)="collapseAll()">
+            keyboard_arrow_up
+    </mat-icon>
+</gear-style>

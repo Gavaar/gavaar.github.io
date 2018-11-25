@@ -1,8 +1,19 @@
 @import '../style-variables/my-cv';
 
 div {
+    display: flex;
+    flex-flow: row;
     background-color: $cv-green;
     color: white;
     margin: 0;
     padding: 0.5em 0 0.5em 2em;
+
+    button {
+        margin: 0 1em 0;
+
+        &.active {
+            background-color: #fff;
+            color: $cv-green;
+        }
+    }
 }

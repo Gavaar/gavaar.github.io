@@ -47,11 +47,6 @@
             border-top: 2px solid darkgreen;
             margin-top: 15px;
             padding: 0 20px 0;
-
-            a {
-                text-decoration-line: unset;
-                color: inherit;
-            }
         }
     }
 
@@ -73,6 +68,10 @@
 
         gav-gear-list-display {
             max-width: calc(65vw - 8em);
+
+            ::ng-deep .skill-title {
+                width: 7vw;
+            }
         }
     }
 }
@@ -129,12 +128,15 @@ footer {
             ::ng-deep #skill-list {
                 max-width: 95vw;
 
-                .skill .title {
+                .skill-title {
                     margin: auto 1em;
+                    min-width: 25vw;
+                    max-width: 25vw;
                 }
 
                 .skill .rating {
-                    transform: scaleX(0.7);
+                    width: 50vw;
+                    transform: scaleX(0.7) translateX(-2em);
                 }
 
                 p {

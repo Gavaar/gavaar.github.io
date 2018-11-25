@@ -13,6 +13,7 @@ export interface SkillConfig {
     description: string;
     icon: string;
     iconType?: IconType;
+    show?: boolean;
 }
 
 // export interface Skill {
@@ -31,6 +32,7 @@ export class Skills {
         for (let i = 0; i < config.length; i++) {
             const rating = config[i].rating;
             typeof rating === 'number' ? config[i].rating = Array.from(Array(rating), (a = 0) => a++) : config[i].rating = rating;
+            config[i].show = false;
             this.skills = config;
         }
     }

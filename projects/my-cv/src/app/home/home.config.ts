@@ -2,8 +2,9 @@
 import { IconType, Skills } from './../../../../../my-libs/gav-gear-list-display/gav-gear-list-display.model';
 
 export const basicInfo = `
-    Currently working as a Front End Multi-Platform Developer (academic examples at <strong>
-        <a href="https://bitbucket.org/Gavaar/" target="_blank">bitbucket.org/Gavaar</a></strong>).
+    Currently working as a Front End Multi-Platform Developer (academic examples at
+        <a class="link" href="https://bitbucket.org/Gavaar/" target="_blank">bitbucket</a> or <a 
+        class="link" href="https://github.com/Gavaar/" target="_blank">github</a>).
     BSC in Psychology w/ Specialization in Behavioral Analysis - Universidad Central de Venezuela.
     Passionate about research, marketing, consumer\'s psychology, and computer programming.
     Interested in expanding my knowledge about applied behavioral analysis and coding.
