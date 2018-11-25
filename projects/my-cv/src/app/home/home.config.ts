@@ -20,7 +20,7 @@ export const skillList: Skills = new Skills([
         iconType: IconType.Svg
     },
     {
-        skill: 'Typescript | Javascript',
+        skill: 'Typescript, Javascript',
         rating: 7,
         description: `Great practice with Typescript. Wide usage of types, interfaces, classes and services.
             Also like thinking on puzzles, with an account on codewars for more practice.
