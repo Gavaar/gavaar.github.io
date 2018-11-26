@@ -25,6 +25,6 @@ import { GavGearListDisplayModule } from 'my-libs/gav-gear-list-display/gav-gear
 })
 export class HomeModule {
     constructor(sanitizer: DomSanitizer, iconRegistry: MatIconRegistry) {
-        iconRegistry.addSvgIcon('angular', sanitizer.bypassSecurityTrustResourceUrl('../../assets/angular.svg'));
+        iconRegistry.addSvgIcon('angular', sanitizer.bypassSecurityTrustResourceUrl('../../assets/angular.svg?sanitize=true'));
     }
 }
