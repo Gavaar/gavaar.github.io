@@ -1,0 +1,22 @@
+<div id="backdrop">
+  <div id="pointer" [ngStyle]="{
+    'top': currentDisplay.position.top ? currentDisplay.position.top + 'em' : unset,
+    'left': currentDisplay.position.left ? currentDisplay.position.left + 'em' : unset,
+    'right': currentDisplay.position.right ? currentDisplay.position.right + 'em' : unset,
+    'bottom': currentDisplay.position.bottom ? currentDisplay.position.bottom + 'em' : unset
+  }">
+  </div>
+</div>
+
+<div id="message-popover" [ngStyle]="{
+  'top': currentDisplay.position.top ? currentDisplay.position.top + 1 + 'em' : unset,
+  'left': currentDisplay.position.left ? currentDisplay.position.left + 4 + 'em' : unset,
+  'right': currentDisplay.position.right ? currentDisplay.position.right + 4 + 'em' : unset,
+  'bottom': currentDisplay.position.bottom ? currentDisplay.position.bottom + 1 + 'em' : unset
+}">
+  {{ currentDisplay.message }}
+  <div class="button-wrapper">
+    <button mat-flat-button (click)="onClose()"> Don't Show This </button>
+    <button mat-flat-button (click)="onNext()"> Next </button>
+  </div>
+</div>

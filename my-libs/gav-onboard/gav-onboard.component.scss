@@ -1,0 +1,38 @@
+#backdrop {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0.5;
+  z-index: 5;
+
+  #pointer {
+    z-index: inherit;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+  }
+}
+
+#message-popover {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  min-width: 300px;
+  max-width: 600px;
+  max-height: 600px;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  padding: 1.5em;
+  z-index: 5;
+
+  .button-wrapper {
+    display: flex;
+    align-self: flex-end;
+  }
+}
