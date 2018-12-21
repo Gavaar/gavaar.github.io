@@ -1,0 +1,39 @@
+<div class="sidenav-content-general-wrapper" *ngIf="(desktopSidenav | async) as desktopSidenav">
+  <button mat-button class="sidenav-expander" (click)="viewSidenav = !viewSidenav" *ngIf="!desktopSidenav.matches">
+    <mat-icon>list</mat-icon>
+  </button>
+
+  <div class="sidenav-container" *ngIf="viewSidenav" [ngClass]="{ mobile: !desktopSidenav.matches }" [@enterLeave]>
+    <ng-container *ngFor="let field of sidenavOptions.fields">
+      <button
+        class="sidenav-main-button"
+        mat-button
+        (click)="onClick(field)"
+        [disableRipple]="true"
+        [ngClass]="{ active: field.active }"
+      >
+        <mat-icon class="icon">{{ field.icon }}</mat-icon> &nbsp;
+        <div class="sidenav-button-field-name">{{ field.name | uppercase }}</div>
+        <mat-icon class="arrow" *ngIf="field.arrow" [ngClass]="{ opened: field.active, closed: !field.active }"
+          >keyboard_arrow_down</mat-icon
+        >
+      </button>
+
+      <ng-container
+        ><button
+          class="sidenav-sub-button"
+          *ngFor="let sub of field.suboptions"
+          mat-button
+          [disableRipple]="true"
+          [ngClass]="{ opened: field.active, closed: !field.active }"
+          (click)="onSuboptionClick(sub)"
+        >
+          {{ sub.name | uppercase }}
+        </button></ng-container
+      >
+    </ng-container>
+  </div>
+
+  <!-- what the sidenav routes to -->
+  <div class="sidenav-content-container"><ng-content></ng-content></div>
+</div>

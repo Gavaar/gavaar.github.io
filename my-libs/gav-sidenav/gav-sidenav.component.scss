@@ -1,0 +1,143 @@
+/*
+* CUSTOM MIXINS -- Briefly describe what it does
+*/
+@mixin positioning($top: unset, $right: unset, $bottom: unset, $left: unset) {
+  // this mixin emulates things like border: 0 0 2 0; for position elements
+  @if $left == unset {
+    @if $bottom == unset {
+      @if $right == unset {
+        top: $top;
+        right: $top;
+        bottom: $top;
+        left: $top;
+      } @else {
+        top: $top;
+        right: $right;
+        bottom: $top;
+        left: $right;
+      }
+    } @else {
+      top: $top;
+      right: $right;
+      bottom: $bottom;
+      left: $right;
+    }
+  } @else {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+  }
+}
+
+$sidewidth: 25vw;
+
+.sidenav-content-general-wrapper {
+  display: flex;
+  height: stretch;
+}
+
+.sidenav-content-general-wrapper .sidenav-expander {
+  position: absolute;
+  top: 0;
+  height: 3rem;
+  color: floralwhite;
+}
+
+.sidenav-container {
+  background-color: rgb(51, 51, 59);
+  padding: 1rem;
+  color: floralwhite;
+  width: stretch;
+  width: 80vw;
+  max-width: 40rem;
+  font-size: 0.8rem;
+  overflow-y: overlay;
+
+  &.mobile {
+    position: absolute;
+    width: 80vw;
+    // the -5rem corresponds to 2rem padding and 3rem absolute positioned item
+    height: calc(100% - 5rem);
+  }
+}
+
+.sidenav-container .sidenav-main-button {
+  width: stretch;
+  margin: 0.3rem 0;
+  padding: 0 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(white, 0.2);
+
+  &.active {
+    border-bottom: 2px solid white;
+  }
+
+  .icon {
+    position: absolute;
+    margin: auto;
+    @include positioning(0, 100, 0, 0);
+  }
+
+  .sidenav-button-field-name {
+    display: inline-block;
+    white-space: initial;
+    padding: 0.5rem;
+  }
+
+  .arrow {
+    position: absolute;
+    margin: auto;
+    @include positioning(0, 0, 0, 100);
+
+    &.closed {
+      transform: rotateZ(0);
+      transition: 250ms;
+    }
+
+    &.opened {
+      transform: rotateZ(180deg);
+      transition: 250ms;
+    }
+  }
+}
+
+.sidenav-container .sidenav-sub-button {
+  display: flex;
+  width: stretch;
+  margin-left: 3rem;
+  height: fit-content;
+  border-bottom: 1px solid rgba(white, 0.2);
+  white-space: initial;
+
+  &.opened {
+    max-height: 10rem;
+    transition: 500ms;
+
+    &:focus {
+      border-bottom: 1px solid white;
+    }
+  }
+
+  &.opened:focus ::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    height: 0;
+    border: 2px solid white;
+    border-radius: 50%;
+    @include positioning(0, unset, 0, 0);
+  }
+
+  &.closed {
+    max-height: 0;
+    border-bottom: 1px solid rgb(51, 51, 59);
+    visibility: collapse;
+    overflow: hidden;
+    transition: 300ms;
+  }
+}
+
+.sidenav-content-container {
+  overflow-y: overlay;
+}
