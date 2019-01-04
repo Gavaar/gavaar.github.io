@@ -1,0 +1,31 @@
+<form [formGroup]="formGroup">
+  <div
+    *ngFor="let key of formGroupKeys; let i = index; trackBy: keyFn"
+    [style.grid-column-end]="'span ' + (opts.columns[i] ? opts.columns[i] : 4)"
+  >
+    <h4 class="gav-field-subtitle">{{ key | uppercase }}</h4>
+    <mat-form-field appearance="outline">
+      <ng-container [ngSwitch]="formTypes[key]">
+        <mat-select *ngSwitchCase="'select'" [formControlName]="key">
+          <mat-option *ngFor="let option of opts.types[key].select" [value]="option">{{
+            option | titlecase
+          }}</mat-option>
+        </mat-select>
+
+        <ng-container *ngSwitchCase="'datepicker'">
+          <input
+            matInput
+            [matDatepicker]="picker"
+            [formControlName]="key"
+            [value]="opts.types[key].datepicker"
+            readonly
+          />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker disabled="false"></mat-datepicker>
+        </ng-container>
+
+        <input matInput *ngSwitchDefault [formControlName]="key" [type]="formTypes[key]" />
+      </ng-container>
+    </mat-form-field>
+  </div>
+</form>

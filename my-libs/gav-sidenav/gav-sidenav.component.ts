@@ -2,15 +2,15 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import { SidenavOption, SidenavOptions } from './gav-sidenav.models';
 
 @Component({
-  selector: 'efx-sidenav',
-  templateUrl: './efx-sidenav.component.html',
-  styleUrls: ['./efx-sidenav.component.scss'],
+  selector: 'gav-sidenav',
+  templateUrl: './gav-sidenav.component.html',
+  styleUrls: ['./gav-sidenav.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   // tslint:disable-next-line: use-view-encapsulation
   encapsulation: ViewEncapsulation.None,
@@ -21,35 +21,40 @@ import { SidenavOption, SidenavOptions } from './gav-sidenav.models';
     ]),
   ],
 })
-export class GavSidenavComponent {
+export class GavaarSidenavComponent {
   @Input() sidenavOptions: SidenavOptions;
   @Output() onOptionClick: EventEmitter<SidenavOption> = new EventEmitter();
 
-  desktopSidenav: Observable<BreakpointState>;
   viewSidenav = true;
+  desktopSidenav$: Observable<BreakpointState>;
+
+  sidenavFn = (index: number) => index;
+  suboptionsFn = (index: number) => index;
 
   constructor(private bpObserver: BreakpointObserver) {
     const deviceWidth = this.bpObserver
       .observe(['(min-width: 1024px)'])
       .pipe(tap(bps => (this.viewSidenav = bps.matches)));
 
-    this.desktopSidenav = deviceWidth as Observable<BreakpointState>;
+    this.desktopSidenav$ = deviceWidth as Observable<BreakpointState>;
   }
 
-  onClick(option): void {
-    const shouldOpen = !option.active;
-    this.closeTabs();
-    if (shouldOpen) option.active = true;
+  // Outputs
+  onClick(option: SidenavOption, index: number): void {
+    this.closeTabs(index);
     this.onOptionClick.emit(option);
   }
 
-  onSuboptionClick(option): void {
+  onSuboptionClick(option: SidenavOption): void {
     this.onOptionClick.emit(option);
   }
 
-  private closeTabs(): void {
-    this.sidenavOptions.fields = this.sidenavOptions.fields.map(field => {
-      field.active = false;
+  // Privates
+  private closeTabs(index: number): void {
+    const fields = this.sidenavOptions.fields;
+
+    fields.map((field, i) => {
+      index === i ? (field.active = !field.active) : (field.active = false);
       return field;
     });
   }

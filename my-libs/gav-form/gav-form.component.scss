@@ -1,0 +1,32 @@
+.gav-form-container {
+  padding: 0 1rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+}
+
+.gav-form-field-wrapper {
+  margin: 0.3em 0;
+}
+
+.gav-form-field-wrapper .gav-form-card {
+  margin: 0 auto auto;
+  box-shadow: 0 2px 8px rgba(#000, 0.2);
+  background-color: white;
+  padding: 0.5rem 1rem;
+  width: stretch;
+  border-radius: 2px;
+}
+
+.gav-form-field form {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(50px, 1fr));
+  font-size: 0.8em;
+  grid-gap: 0 0.5em;
+}
+
+@media screen and (max-width: 1023px) {
+  .gav-form-field form {
+    grid-template-columns: repeat(4, minmax(50px, 1fr));
+  }
+}
