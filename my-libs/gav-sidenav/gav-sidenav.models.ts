@@ -8,7 +8,7 @@ export interface SidenavOption {
 }
 
 export class SidenavOptions {
-  fields: SidenavOption[];
+  readonly fields: SidenavOption[];
 
   constructor(options: SidenavOption[]) {
     if (options) {

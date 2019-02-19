@@ -1,37 +1,41 @@
-<div class="sidenav-content-general-wrapper" *ngIf="(desktopSidenav | async) as desktopSidenav">
+<div class="sidenav-content-general-wrapper" *ngIf="(desktopSidenav$ | async) as desktopSidenav">
   <button mat-button class="sidenav-expander" (click)="viewSidenav = !viewSidenav" *ngIf="!desktopSidenav.matches">
     <mat-icon>list</mat-icon>
   </button>
 
   <div class="sidenav-container" *ngIf="viewSidenav" [ngClass]="{ mobile: !desktopSidenav.matches }" [@enterLeave]>
-    <ng-container *ngFor="let field of sidenavOptions.fields">
-      <button
-        class="sidenav-main-button"
-        mat-button
-        (click)="onClick(field)"
-        [disableRipple]="true"
-        [ngClass]="{ active: field.active }"
-      >
-        <mat-icon class="icon">{{ field.icon }}</mat-icon> &nbsp;
-        <div class="sidenav-button-field-name">{{ field.name | uppercase }}</div>
-        <mat-icon class="arrow" *ngIf="field.arrow" [ngClass]="{ opened: field.active, closed: !field.active }"
-          >keyboard_arrow_down</mat-icon
-        >
-      </button>
-
-      <ng-container
-        ><button
-          class="sidenav-sub-button"
-          *ngFor="let sub of field.suboptions"
+    <div class="sidenav-scroller">
+      <ng-container *ngFor="let field of sidenavOptions.fields; trackBy: sidenavFn; let i = index">
+        <button
+          class="sidenav-main-button"
           mat-button
+          (click)="onClick(field, i)"
           [disableRipple]="true"
-          [ngClass]="{ opened: field.active, closed: !field.active }"
-          (click)="onSuboptionClick(sub)"
+          [ngClass]="{ active: field.active }"
         >
-          {{ sub.name | uppercase }}
-        </button></ng-container
-      >
-    </ng-container>
+          <mat-icon class="icon">{{ field.icon }}</mat-icon> &nbsp;
+          <div class="sidenav-button-field-name">{{ field.name | uppercase }}</div>
+          <mat-icon class="arrow" *ngIf="field.arrow" [ngClass]="{ opened: field.active, closed: !field.active }"
+            >keyboard_arrow_down</mat-icon
+          >
+        </button>
+
+        <div class="sub-button-container" [ngClass]="{ opened: field.active, closed: !field.active }">
+          <button
+            class="sidenav-sub-button"
+            *ngFor="let sub of field.suboptions; trackBy: subfieldsFn"
+            mat-button
+            [disableRipple]="true"
+            (click)="onSuboptionClick(sub)"
+          >
+            {{ sub.name | uppercase }}
+          </button>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- footer -->
+    <ng-content select=".gav-sidenav-footer"></ng-content>
   </div>
 
   <!-- what the sidenav routes to -->

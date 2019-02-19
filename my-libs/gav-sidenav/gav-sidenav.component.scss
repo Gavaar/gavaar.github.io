@@ -1,34 +1,4 @@
-/*
-* CUSTOM MIXINS -- Briefly describe what it does
-*/
-@mixin positioning($top: unset, $right: unset, $bottom: unset, $left: unset) {
-  // this mixin emulates things like border: 0 0 2 0; for position elements
-  @if $left == unset {
-    @if $bottom == unset {
-      @if $right == unset {
-        top: $top;
-        right: $top;
-        bottom: $top;
-        left: $top;
-      } @else {
-        top: $top;
-        right: $right;
-        bottom: $top;
-        left: $right;
-      }
-    } @else {
-      top: $top;
-      right: $right;
-      bottom: $bottom;
-      left: $right;
-    }
-  } @else {
-    top: $top;
-    right: $right;
-    bottom: $bottom;
-    left: $left;
-  }
-}
+@import '../../gavaar-styles.scss';
 
 $sidewidth: 25vw;
 
@@ -45,24 +15,36 @@ $sidewidth: 25vw;
 }
 
 .sidenav-container {
-  background-color: rgb(51, 51, 59);
+  display: flex;
+  flex-flow: column;
+  background-color: #343e48;
   padding: 1rem;
   color: floralwhite;
   width: stretch;
   width: 80vw;
-  max-width: 40rem;
+  max-width: 15em;
   font-size: 0.8rem;
+  z-index: 10;
   overflow-y: overlay;
 
   &.mobile {
     position: absolute;
     width: 80vw;
+    max-width: 60vw;
     // the -5rem corresponds to 2rem padding and 3rem absolute positioned item
     height: calc(100% - 5rem);
+    transition: height 0.2s;
   }
 }
 
+.sidenav-scroller {
+  display: flex;
+  flex-flow: column;
+  min-height: fit-content;
+}
+
 .sidenav-container .sidenav-main-button {
+  display: inline-flex;
   width: stretch;
   margin: 0.3rem 0;
   padding: 0 1.5rem;
@@ -70,7 +52,7 @@ $sidewidth: 25vw;
   border-bottom: 1px solid rgba(white, 0.2);
 
   &.active {
-    border-bottom: 2px solid white;
+    border-bottom: 1px solid white;
   }
 
   .icon {
@@ -102,25 +84,31 @@ $sidewidth: 25vw;
   }
 }
 
-.sidenav-container .sidenav-sub-button {
-  display: flex;
-  width: stretch;
-  margin-left: 3rem;
-  height: fit-content;
-  border-bottom: 1px solid rgba(white, 0.2);
-  white-space: initial;
+.sidenav-container .sub-button-container {
+  overflow: hidden;
 
   &.opened {
-    max-height: 10rem;
-    transition: 500ms;
-
-    &:focus {
-      border-bottom: 1px solid white;
-    }
+    max-height: 500px;
+    transition: 0.5s;
   }
+  &.closed {
+    max-height: 0;
+    transition: 0.5s;
+  }
+}
 
-  &.opened:focus ::before {
-    content: "";
+.sidenav-container .sub-button-container .sidenav-sub-button {
+  display: inline-flex;
+  width: stretch;
+  margin-left: 3rem;
+  white-space: initial;
+  border-bottom: 1px solid rgba(white, 0.2);
+
+  &:focus {
+    border-bottom: 1px solid white;
+  }
+  &:focus ::before {
+    content: '';
     position: absolute;
     margin: auto;
     height: 0;
@@ -130,14 +118,17 @@ $sidewidth: 25vw;
   }
 
   &.closed {
-    max-height: 0;
-    border-bottom: 1px solid rgb(51, 51, 59);
-    visibility: collapse;
-    overflow: hidden;
-    transition: 300ms;
+    color: #343e48;
+    border-bottom: 1px solid #343e48;
   }
+}
+
+.sidenav-container .gav-sidenav-footer {
+  margin-top: auto;
+  margin-bottom: 0.5rem;
 }
 
 .sidenav-content-container {
   overflow-y: overlay;
+  width: 100vw;
 }
