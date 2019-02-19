@@ -7,6 +7,19 @@ body {
     overflow-y: hidden;
 }
 
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(green, 0.5);
+    opacity: 0.5;
+    transition: 0.4s;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: green;
+    transition: 0.4s;
+}
+
 @media screen and (max-width: 1080px){
     body {
         overflow-y: overlay;
