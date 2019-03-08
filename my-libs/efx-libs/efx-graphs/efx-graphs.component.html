@@ -1,0 +1,14 @@
+<div class="EfxGraphs scrollable" *ngIf="graphs">
+  <efx-single-graph
+    *ngFor="let graphData of graphs; trackBy: graphFn"
+    [graph]="graphData"
+    class="EfxGraphs__graph"
+  ></efx-single-graph>
+
+  <div class="EfxGraphs__labels">
+    <span class="description flex" *ngFor="let key of keys; let i = index">
+      <div class="graph-legend-boxes" [style.background-color]="colors[i]"></div>
+      {{ key | titlecase }}
+    </span>
+  </div>
+</div>

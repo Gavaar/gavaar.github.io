@@ -1,0 +1,13 @@
+<div class="EfxGraph">
+  <div class="subtitle">{{ graph.title }}</div>
+  <div class="EfxGraph__description description">{{ graph.description }}</div>
+
+  <div class="EfxGraph__msg-wrapper">
+    <div class="EfxGraph__message" [ngClass]="{ opaque: opacity, shown: !opacity }">
+      <span class="description strong"> 60.000 €</span>
+      <span class="description"> Aportados este año </span>
+    </div>
+
+    <canvas #canvas *ngIf="chartData" (mouseenter)="opacity = true" (mouseleave)="opacity = false"></canvas>
+  </div>
+</div>

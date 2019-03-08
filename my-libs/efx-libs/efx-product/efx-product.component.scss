@@ -1,0 +1,35 @@
+.EfxProduct {
+  height: auto;
+  width: stretch;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.EfxProduct_image {
+  height: 5em;
+  min-width: 5em;
+  overflow: hidden;
+  flex-grow: 2;
+}
+.EfxProduct_text {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  flex-grow: 3;
+  padding: 0 0.5em;
+}
+.EfxProduct_unit {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  margin: 0.5em 0 0;
+}
+
+// IE support
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .EfxProduct_text {
+    width: 100%;
+  }
+}

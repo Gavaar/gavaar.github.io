@@ -1,0 +1,15 @@
+<div class="EfxTable scrollable" *ngIf="tableData">
+  <table mat-table [dataSource]="tableData.rows">
+    <!-- Columns -->
+    <ng-container *ngFor="let column of tableData.columns; trackBy: columnFn">
+      <ng-container matColumnDef="{{ column }}">
+        <th mat-header-cell *matHeaderCellDef>{{ column | uppercase }}</th>
+        <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+      </ng-container>
+    </ng-container>
+
+    <!-- Definitions -->
+    <tr mat-header-row *matHeaderRowDef="tableData.columns"></tr>
+    <tr mat-row class="EfxTable__rows" *matRowDef="let row; columns: tableData.columns" (click)="onRowClick(row)"></tr>
+  </table>
+</div>

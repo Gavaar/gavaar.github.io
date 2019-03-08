@@ -1,0 +1,27 @@
+.EfxTable {
+  width: stretch;
+  overflow-x: auto;
+}
+
+.EfxTable__rows {
+  height: auto;
+  cursor: pointer;
+
+  &:nth-child(even) {
+    background-color: #eeeeee;
+  }
+
+  &:hover {
+    background-color: rgba(#2e3944, 0.85);
+
+    .mat-cell {
+      color: #eeeeee;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .EfxTable .mat-table {
+    word-break: normal;
+  }
+}
