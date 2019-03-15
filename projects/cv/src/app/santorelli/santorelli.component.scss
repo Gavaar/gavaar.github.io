@@ -1,0 +1,83 @@
+.Santorelli {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.Santorelli__router {
+  width: stretch;
+  height: stretch;
+  overflow-y: auto;
+  flex-grow: 5;
+  flex-basis: 0;
+  margin: 0 1rem 2rem;
+}
+
+
+.Santorelli__navigator {
+  flex-grow: 2;
+  flex-basis: 0;
+  margin: 4rem auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.Santorelli__nav-option {
+  width: stretch;
+  height: auto;
+  border: 1px solid;
+  border-radius: 50%;
+  padding: 1rem;
+  position: relative;
+  width: 2rem;
+  height: 0.5rem;
+
+  .story-icon {
+    font-size: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    margin-top: -2rem;
+  }
+}
+
+.Santorelli__nav-text.tablet-only.description {
+  margin: 0 auto;
+}
+
+// Presentation
+.Presentation {
+  display: flex;
+  flex-flow: column;
+}
+
+.Presentation__pic {
+  display: block;
+  width: 80%;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.Presentation .description {
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .Presentation {
+    flex-flow: row nowrap;
+
+    .Presentation__author {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+
+    .Presentation__info {
+      flex-grow: 1;
+      flex-basis: 0;
+      margin: auto;
+    }
+  }
+}

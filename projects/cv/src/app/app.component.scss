@@ -1,0 +1,31 @@
+.AppContainer {
+  height: 100%;
+}
+
+.AppContainer__router {
+  overflow: hidden;
+  width: 100%;
+}
+
+.CvHeader {
+  display: flex;
+  flex-flow: row nowrap;
+  line-height: 3rem;
+  width: stretch;
+  padding-left: 5rem;
+}
+
+.CvHeader__icon {
+  margin: auto 0;
+
+  &.right {
+    margin-left: auto;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+}
+
+.CvHeader__text {
+  padding: 0 0.5rem;
+}
+

@@ -1,0 +1,14 @@
+@import 'styles/variable-colors';
+@import 'styles/angular-material';
+@import 'styles/general-skins';
+
+@mixin skins($darkblack, $black, $darkgreen, $green, $lightgreen, $white, $whitegreen, $blue, $lightblue, $darkblue, $orange, $red) {
+  
+  $colors: $darkblack, $black, $darkgreen, $green, $lightgreen, $white, $whitegreen, $blue, $lightblue, $darkblue, $orange, $red;
+
+  // general skins
+  @include general-skins($colors...);
+
+  // Angular Material
+  @include angular-material($colors...);
+}

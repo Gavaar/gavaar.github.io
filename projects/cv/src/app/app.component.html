@@ -1,3 +1,15 @@
-<header class="CvHeader">Francisco Santorelli</header>
-<p>My cv</p>
-<footer>my footer</footer>
+<div class="AppContainer" [ngClass]="{ CvDark: dark }">
+  <div class="AppContainer__styles">
+    <header class="CvHeader cv-header">
+      <mat-icon class="CvHeader__icon">assignment</mat-icon>
+      <span class="CvHeader__text">Francisco Santorelli</span>
+      <mat-icon class="CvHeader__icon right" (click)="dark = !dark">wb_sunny</mat-icon>
+    </header>
+
+    <gav-sidenav [config]="sidenavOptions">
+      <div class="AppContainer__router">
+        <router-outlet></router-outlet>
+      </div>
+    </gav-sidenav>
+  </div>
+</div>

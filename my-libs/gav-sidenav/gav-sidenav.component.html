@@ -1,5 +1,5 @@
 <nav class="GavSidenav" *ngIf="(desktopSidenav$ | async) as desktopSidenav">
-  <button mat-button class="GavSidenav__expander-btn Gav-button header-button" (click)="viewSidenav = !viewSidenav"
+  <button mat-button class="GavSidenav__expander-btn" (click)="viewSidenav = !viewSidenav"
     *ngIf="!desktopSidenav.matches">
     <mat-icon>list</mat-icon>
   </button>
@@ -9,7 +9,7 @@
       <ng-container *ngFor="let field of sidenavOptions.fields; trackBy: sidenavFn; let i = index">
         <button class="GavSidenav__button" mat-button (click)="onClick(field, i)" [disableRipple]="true"
           [ngClass]="{ 'sdn--active': field.active }">
-          <img [src]="field.icon" class="GavSidenav__icon" />&nbsp;
+          <mat-icon class="GavSidenav__icon">{{ field.icon }}</mat-icon>&nbsp;
           <div class="GavSidenav__button-name">{{ field.name | uppercase }}</div>
           <mat-icon class="GavSidenav__arrow" *ngIf="field.suboptions"
             [ngClass]="{ 'arrw--opened': field.active, 'arrw--closed': !field.active }">keyboard_arrow_down</mat-icon>

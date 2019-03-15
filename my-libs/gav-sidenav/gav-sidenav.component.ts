@@ -6,7 +6,6 @@ import {
   EventEmitter,
   Input,
   Output,
-  ViewEncapsulation,
 } from '@angular/core';
 import { gavContentExpanderAnimations } from '../gav-animations';
 import { Observable } from 'rxjs';
@@ -18,7 +17,6 @@ import { SidenavOption, SidenavOptions } from './gav-sidenav.models';
   templateUrl: './gav-sidenav.component.html',
   styleUrls: ['./gav-sidenav.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('enterLeave', [
       transition('void => *', [style({ transform: 'translateX(-100%)' }), animate(200)]),
@@ -28,7 +26,7 @@ import { SidenavOption, SidenavOptions } from './gav-sidenav.models';
   ],
 })
 export class GavSidenavComponent {
-  @Input() sidenavOptions: SidenavOptions;
+  @Input('config') sidenavOptions: SidenavOptions;
   @Output() onOptionClick: EventEmitter<string> = new EventEmitter();
 
   viewSidenav = true;
