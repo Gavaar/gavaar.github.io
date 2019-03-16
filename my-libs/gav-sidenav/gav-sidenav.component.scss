@@ -1,28 +1,28 @@
-@import '../../gavaar-styles.scss';
-
 $sidewidth: 25vw;
 
-.sidenav-content-general-wrapper {
+.GavSidenav {
   display: flex;
-  height: stretch;
+  height: calc(100% - 3rem);
 }
 
-.sidenav-content-general-wrapper .sidenav-expander {
+.GavSidenav__expander-btn.mat-button {
   position: absolute;
   top: 0;
   height: 3rem;
-  color: floralwhite;
+
+  &.Gav-button.header-button :nth-child(1) {
+    border: 0;
+  }
 }
 
-.sidenav-container {
+.GavSidenav__container {
   display: flex;
   flex-flow: column;
-  background-color: #343e48;
-  padding: 1rem;
-  color: floralwhite;
+  background-color: #333e48;
+  padding: 1rem 1rem 0;
+  color: #eeeeee;
   width: stretch;
-  width: 80vw;
-  max-width: 15em;
+  max-width: 18em;
   font-size: 0.8rem;
   z-index: 10;
   overflow-y: overlay;
@@ -31,104 +31,97 @@ $sidewidth: 25vw;
     position: absolute;
     width: 80vw;
     max-width: 60vw;
-    // the -5rem corresponds to 2rem padding and 3rem absolute positioned item
-    height: calc(100% - 5rem);
-    transition: height 0.2s;
+    height: calc(100% - 4rem);
   }
 }
 
-.sidenav-scroller {
+.GavSidenav__scroller {
   display: flex;
   flex-flow: column;
   min-height: fit-content;
 }
 
-.sidenav-container .sidenav-main-button {
+.GavSidenav__button {
   display: inline-flex;
   width: stretch;
   margin: 0.3rem 0;
   padding: 0 1.5rem;
   text-align: left;
-  border-bottom: 1px solid rgba(white, 0.2);
-
-  &.active {
-    border-bottom: 1px solid white;
-  }
-
-  .icon {
-    position: absolute;
-    margin: auto;
-    @include positioning(0, 100, 0, 0);
-  }
-
-  .sidenav-button-field-name {
-    display: inline-block;
-    white-space: initial;
-    padding: 0.5rem;
-  }
-
-  .arrow {
-    position: absolute;
-    margin: auto;
-    @include positioning(0, 0, 0, 100);
-
-    &.closed {
-      transform: rotateZ(0);
-      transition: 250ms;
-    }
-
-    &.opened {
-      transform: rotateZ(180deg);
-      transition: 250ms;
-    }
-  }
+  border-bottom: 1px solid rgba(#eeeeee, 0.2);
+  background: none;
+  color: #eeeeee;
 }
 
-.sidenav-container .sub-button-container {
-  overflow: hidden;
-
-  &.opened {
-    max-height: 500px;
-    transition: 0.5s;
-  }
-  &.closed {
-    max-height: 0;
-    transition: 0.5s;
-  }
+.GavSidenav__icon {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: calc(100% - 1rem);
 }
 
-.sidenav-container .sub-button-container .sidenav-sub-button {
+.GavSidenav__button-name {
+  display: inline-block;
+  white-space: normal;
+  word-break: normal;
+  -ms-word-break: normal;
+  padding: 0.5rem;
+}
+
+.GavSidenav__arrow {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.GavSidenav__sub-button {
   display: inline-flex;
+  width: 100%;
   width: stretch;
-  margin-left: 3rem;
+  margin-left: 1rem;
   white-space: initial;
-  border-bottom: 1px solid rgba(white, 0.2);
+  border-bottom: 1px solid rgba(#eeeeee, 0.2);
+  background: none;
+  color: #eeeeee;
 
-  &:focus {
-    border-bottom: 1px solid white;
-  }
   &:focus ::before {
     content: '';
     position: absolute;
     margin: auto;
     height: 0;
-    border: 2px solid white;
+    border: 2px solid #eeeeee;
     border-radius: 50%;
-    @include positioning(0, unset, 0, 0);
-  }
-
-  &.closed {
-    color: #343e48;
-    border-bottom: 1px solid #343e48;
+    top: 0;
+    left: 0;
+    bottom: 0;
   }
 }
 
-.sidenav-container .gav-sidenav-footer {
+.GavSidenav__footer {
   margin-top: auto;
   margin-bottom: 0.5rem;
 }
 
-.sidenav-content-container {
+.GavSidenav__content {
   overflow-y: overlay;
   width: 100vw;
+}
+
+// Mods
+.arrw--closed {
+  transform: rotateZ(0);
+  transition: 250ms;
+}
+
+.arrw--opened {
+  transform: rotateZ(-180deg);
+  transition: 250ms;
+}
+
+.sdn--active {
+  border-bottom: 1px solid #eeeeee;
+  text-shadow: 0 0 5px #eeeeee;
 }

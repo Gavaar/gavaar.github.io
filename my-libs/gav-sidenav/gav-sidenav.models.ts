@@ -1,10 +1,8 @@
 export interface SidenavOption {
   name: string;
-  routerLink: string;
+  routerLink?: string;
   icon?: string;
-  suboptions?: Array<{ name: string; routerLink: string }>;
-  arrow?: boolean;
-  active?: boolean;
+  suboptions?: { name: string; routerLink: string }[];
 }
 
 export class SidenavOptions {
@@ -12,8 +10,8 @@ export class SidenavOptions {
 
   constructor(options: SidenavOption[]) {
     if (options) {
-      this.fields = options.map(opt => {
-        const current = { ...opt, active: false, arrow: opt.suboptions ? true : false };
+      this.fields = options.map((opt: SidenavOption) => {
+        const current = { ...opt, active: false, arrow: !!opt.suboptions };
 
         return current;
       });

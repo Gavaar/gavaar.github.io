@@ -1,0 +1,10 @@
+<div class="EfxProduct">
+  <div class="EfxProduct_unit card-box clickable" *ngFor="let product of config" (click)="onProductClick(product.url)">
+    <img class="EfxProduct_image" [src]="product.image" alt="product-image" />
+
+    <div class="EfxProduct_text">
+      <h4 class="subtitle">{{ product.title }}</h4>
+      <p class="description small">{{ product.description }}</p>
+    </div>
+  </div>
+</div>

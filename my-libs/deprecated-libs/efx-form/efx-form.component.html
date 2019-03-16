@@ -1,0 +1,30 @@
+<div class="EfxForm" *ngIf="formsConfig as forms">
+  <div class="EfxForm__wrapper" *ngFor="let field of forms; trackBy: formsConfigFn">
+    <ng-container *ngIf="field.tabs; then tabbedForm; else untabbedForm"></ng-container>
+
+    <!-- templates -->
+    <ng-template #tabbedForm>
+      <mat-tab-group (selectedTabChange)="onTabClick(field, $event)">
+        <mat-tab *ngFor="let form of field.forms" [label]="form.title | uppercase">
+          <ng-container
+            *ngTemplateOutlet="
+              templateForm;
+              context: {
+                formGroup: form.formGroup
+              }
+            "
+          ></ng-container>
+        </mat-tab>
+      </mat-tab-group>
+    </ng-template>
+
+    <ng-template #untabbedForm>
+      <ng-container *ngTemplateOutlet="templateForm; context: { formGroup: field.forms }"></ng-container>
+    </ng-template>
+
+    <!-- forms -->
+    <ng-template #templateForm let-formGroup="formGroup">
+      <efx-form-field [formGroup]="formGroup" [opts]="field.opts"></efx-form-field>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+.EfxGraph {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.EfxGraph__description {
+  height: fit-content;
+  overflow: hidden;
+}
+.EfxGraph__msg-wrapper {
+  position: relative;
+}
+.EfxGraph__message {
+  position: absolute;
+  display: inline-flex;
+  flex-flow: column wrap;
+  margin: auto;
+  width: 40%;
+  height: 60%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  overflow: hidden;
+  justify-content: center;
+  text-align: center;
+
+  &.opaque {
+    opacity: 0.2;
+    transition: 0.2s;
+  }
+  &.shown {
+    opacity: 1;
+    transition: 0.2s;
+  }
+}

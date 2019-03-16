@@ -1,0 +1,81 @@
+@mixin general-skins($darkblack, $black, $darkgreen, $green, $lightgreen, $white, $whitegreen, $blue, $lightblue, $darkblue, $orange, $red) {
+  .AppContainer__styles {
+    height: 100%;
+    background-color: $white;
+    color: $black;
+
+    // Sidenav
+    .GavSidenav {
+      .GavSidenav__container {
+        background-color: $black;
+        color: $whitegreen;
+      }
+      
+      .GavSidenav__button {
+        border-color: rgba($white, 0.2);
+        background-color: transparent;
+        color: $white;
+      }
+      
+      .GavSidenav__sub-button {
+        border-color: rgba($white, 0.2);
+        background-color: transparent;
+        color: $white;
+      
+        &:focus ::before {
+          border-color: $white;
+        }
+      }
+      
+      .sdn--active {
+        border-color: $white;
+        text-shadow: 0 0 5px $white;
+      }
+    }
+
+    // Header
+    .cv-header {
+      background-color: $darkblack;
+      color: $white;
+    }
+
+    // Text
+    .title {
+      text-align: center;
+      color: $darkgreen;
+      font-size: 1.6rem;
+    }
+    
+    .cv-link {
+      color: $darkblue;
+      text-decoration: none;
+    }
+
+    .description {
+      text-align: justify;
+      color: $black;
+      margin: 0 0.5rem;
+    }
+
+    // Elements
+    .story-teller {
+      color: $lightblue;
+      border-color: $blue;
+
+      .story-icon {
+        color: $blue;
+      }
+    }
+
+    .tablet-only {
+      display: none;
+    }
+
+    @media screen and (min-width: 724px) {
+      .tablet-only {
+        display: inline-block;
+      }
+    }
+  }
+}
+
