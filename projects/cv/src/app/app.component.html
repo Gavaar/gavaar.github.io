@@ -3,7 +3,7 @@
     <header class="CvHeader cv-header">
       <mat-icon class="CvHeader__icon">assignment</mat-icon>
       <span class="CvHeader__text">Francisco Santorelli</span>
-      <mat-icon class="CvHeader__icon right" (click)="dark = !dark">wb_sunny</mat-icon>
+      <mat-icon class="CvHeader__icon right" (click)="dark = !dark">{{ dark ? 'brightness_2' : 'wb_sunny' }}</mat-icon>
     </header>
 
     <gav-sidenav [config]="sidenavOptions">
