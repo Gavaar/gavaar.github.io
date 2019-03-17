@@ -2,9 +2,9 @@
 @import 'styles/angular-material';
 @import 'styles/general-skins';
 
-@mixin skins($darkblack, $black, $darkgreen, $green, $lightgreen, $white, $whitegreen, $blue, $lightblue, $darkblue, $orange, $red) {
+@mixin skins($black, $darkgreen, $green, $lightgreen, $white, $blue, $red) {
   
-  $colors: $darkblack, $black, $darkgreen, $green, $lightgreen, $white, $whitegreen, $blue, $lightblue, $darkblue, $orange, $red;
+  $colors: $black, $darkgreen, $green, $lightgreen, $white, $blue, $red;
 
   // general skins
   @include general-skins($colors...);

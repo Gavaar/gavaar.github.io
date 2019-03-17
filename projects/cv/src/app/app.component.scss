@@ -12,7 +12,7 @@
   flex-flow: row nowrap;
   line-height: 3rem;
   width: stretch;
-  padding-left: 5rem;
+  padding: 0 0 0 4rem;
 }
 
 .CvHeader__icon {
@@ -29,3 +29,8 @@
   padding: 0 0.5rem;
 }
 
+@media screen and (min-width: 724px) {
+  .CvHeader {
+    padding: 0 4rem;
+  }
+}

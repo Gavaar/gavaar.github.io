@@ -11,7 +11,9 @@
   font-family: 'Open Sans', sans-serif;
   overflow: hidden;
 
-  @include skins($list...);
+  .CvLight {
+    @include skins($list...);
+  }
 
   .CvDark {
     @include skins($dark-list...);

@@ -1,4 +1,4 @@
-@mixin angular-material($darkblack, $black, $darkgreen, $green, $lightgreen, $white, $whitegreen, $blue, $lightblue, $darkblue, $orange, $red) {
+@mixin angular-material($black, $darkgreen, $green, $lightgreen, $white, $blue, $red) {
   .mat-icon {
     color: $white;
   }
