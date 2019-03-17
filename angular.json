@@ -59,7 +59,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cv:build"
+            "browserTarget": "cv:build",
+            "aot": true
           },
           "configurations": {
             "production": {

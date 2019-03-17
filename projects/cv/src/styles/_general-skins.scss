@@ -62,8 +62,13 @@
       color: $blue;
       border-color: $blue;
 
-      .story-icon {
-        color: $blue;
+      &.active {
+        color: $darkgreen;
+        border-color: $darkgreen;
+
+        .story-icon {
+          color: $darkgreen;
+        }
       }
     }
 

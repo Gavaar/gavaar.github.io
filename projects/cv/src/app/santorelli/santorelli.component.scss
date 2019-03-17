@@ -17,9 +17,6 @@
   flex-grow: 2;
   flex-basis: 0;
   margin: 4rem auto;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
 }
 
 .Santorelli__nav-option {
@@ -31,6 +28,7 @@
   position: relative;
   width: 2rem;
   height: 0.5rem;
+  margin-top: 0.5rem;
 
   .story-icon {
     font-size: 4rem;
@@ -46,6 +44,17 @@
 
 .Santorelli__nav-text.tablet-only.description {
   margin: 0 auto 0 2rem;
+}
+
+@media screen and (min-width: 1024px){
+  .Santorelli__navigator {
+    grid-template-columns: repeat(2, 3rem 1fr);
+    grid-template-rows: 6rem;
+    grid-column-gap: 1rem;
+    justify-content: space-between;
+    display: grid;
+    margin: 4rem;
+  }
 }
 
 // Presentation

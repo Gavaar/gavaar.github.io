@@ -1,17 +1,18 @@
 <nav class="GavSidenav" *ngIf="(desktopSidenav$ | async) as desktopSidenav">
-  <button mat-button class="GavSidenav__expander-btn" (click)="viewSidenav = !viewSidenav"
-    *ngIf="!desktopSidenav.matches">
+  <button mat-button class="GavSidenav__expander-btn" (click)="viewSidenav = !viewSidenav">
     <mat-icon>list</mat-icon>
   </button>
 
-  <div class="GavSidenav__container" *ngIf="viewSidenav" [ngClass]="{ mobile: !desktopSidenav.matches }" [@enterLeave]>
+  <div class="GavSidenav__container" *ngIf="viewSidenav || desktopSidenav.matches"
+    [ngClass]="{ mobile: !desktopSidenav.matches, active: viewSidenav }" [@enterLeave]>
     <div class="GavSidenav__scroller">
       <ng-container *ngFor="let field of sidenavOptions.fields; trackBy: sidenavFn; let i = index">
         <button class="GavSidenav__button" mat-button (click)="onClick(field, i)" [disableRipple]="true"
           [ngClass]="{ 'sdn--active': field.active }">
           <mat-icon class="GavSidenav__icon">{{ field.icon }}</mat-icon>&nbsp;
-          <div class="GavSidenav__button-name">{{ field.name | uppercase }}</div>
-          <mat-icon class="GavSidenav__arrow" *ngIf="field.suboptions"
+          <div class="GavSidenav__button-name" *ngIf="viewSidenav" [@horizontalExpand]>{{ field.name | uppercase }}
+          </div>
+          <mat-icon class="GavSidenav__arrow" *ngIf="field.suboptions && viewSidenav"
             [ngClass]="{ 'arrw--opened': field.active, 'arrw--closed': !field.active }">keyboard_arrow_down</mat-icon>
         </button>
 

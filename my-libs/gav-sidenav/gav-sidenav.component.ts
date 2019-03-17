@@ -7,7 +7,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { gavContentExpanderAnimations } from '../gav-animations';
+import { gavContentExpanderAnimations, gavHorizontalExpanderAnimate } from '../gav-animations';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { SidenavOption, SidenavOptions } from './gav-sidenav.models';
@@ -23,19 +23,19 @@ import { SidenavOption, SidenavOptions } from './gav-sidenav.models';
       transition('* => void', [animate(200, style({ transform: 'translateX(-100%)' }))]),
     ]),
     gavContentExpanderAnimations,
+    gavHorizontalExpanderAnimate,
   ],
 })
 export class GavSidenavComponent {
   @Input('config') sidenavOptions: SidenavOptions;
   @Output() onOptionClick: EventEmitter<string> = new EventEmitter();
 
-  viewSidenav = true;
+  viewSidenav = false;
   desktopSidenav$: Observable<BreakpointState>;
 
   constructor(private bpObserver: BreakpointObserver) {
     const deviceWidth = this.bpObserver
       .observe(['(min-width: 1024px)'])
-      .pipe(tap(bps => (this.viewSidenav = bps.matches)));
 
     this.desktopSidenav$ = deviceWidth as Observable<BreakpointState>;
   }
