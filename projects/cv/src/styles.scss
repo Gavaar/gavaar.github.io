@@ -19,3 +19,7 @@
     @include skins($dark-list...);
   }
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
