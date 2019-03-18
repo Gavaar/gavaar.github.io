@@ -8,6 +8,7 @@
     .GavSidenav {
       .GavSidenav__container {
         background-color: $darkgreen;
+        box-shadow: 0px 3px 3px $darkgreen;
         color: $white;
       }
       
@@ -36,6 +37,7 @@
     // Header
     .cv-header {
       background-color: $darkgreen;
+      box-shadow: 0px 0 3px $darkgreen;
       color: $white;
     }
 
@@ -77,14 +79,6 @@
     }
 
     @media screen and (min-width: 724px) {
-      .gav-card {
-        box-shadow: 0 0 1px $black;
-        border-radius: 15px;
-        padding: 1.5rem;
-        margin: 1.5rem;
-        background-color: $white;
-      }
-
       .tablet-only {
         display: inline-block;
       }

@@ -19,7 +19,6 @@ $sidewidth: 25vw;
 .GavSidenav__container {
   display: flex;
   flex-flow: column;
-  background-color: #333e48;
   padding: 1rem 1rem 0;
   color: #eeeeee;
   width: stretch;
@@ -33,7 +32,7 @@ $sidewidth: 25vw;
     position: absolute;
     width: 80vw;
     max-width: 70vw;
-    height: calc(100% - 4rem);
+    height: 100%;
   }
 }
 
@@ -52,6 +51,14 @@ $sidewidth: 25vw;
   text-align: left;
   background: none;
   color: #eeeeee;
+
+  &.mat-button .mat-button-focus-overlay {
+    display: none;
+  }
+}
+
+::ng-deep .GavSidenav__button.mat-button .mat-button-focus-overlay {
+  display: none;
 }
 
 .GavSidenav__icon {
