@@ -18,7 +18,7 @@ export class AppComponent {
       icon: 'face'
     },
     {
-      name: 'More coming...',
+      name: 'Under Construction...',
       routerLink: '/under-construction',
       icon: 'build'
     }

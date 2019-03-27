@@ -24,7 +24,6 @@
             ],
             "styles": [
               "projects/cv/src/styles.scss",
-              "projects/cv/src/skins.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true

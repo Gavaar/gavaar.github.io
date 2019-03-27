@@ -1,7 +1,8 @@
 @import "~@angular/material/prebuilt-themes/purple-green.css";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import 'styles/material-icons';
-@import 'skins';
+@import 'styles/angular-material';
+@import 'styles/skins';
 
 .SantorellisCurriculum {
   margin: 0;
@@ -12,11 +13,23 @@
   overflow: hidden;
 
   .CvLight {
-    @include skins($list...);
+    --black: #192419;
+    --darkgreen: #2c502c;
+    --green: #318831;
+    --lightgreen: #ecffec;
+    --white: #eeeeee;
+    --blue: #2d5370;
+    --red: #ae553e;
   }
 
   .CvDark {
-    @include skins($dark-list...);
+    --black: #eeeeee;
+    --darkgreen: #ecffec;
+    --green: #318831;
+    --lightgreen: #2c502c;
+    --white: #192419;
+    --blue: #2d5370;
+    --red: #ae553e;
   }
 }
 

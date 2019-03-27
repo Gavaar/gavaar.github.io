@@ -12,48 +12,14 @@
   margin: 0 1rem 2rem;
 }
 
-
-.Santorelli__navigator {
-  flex-grow: 2;
-  flex-basis: 0;
-  margin: 4rem auto;
-}
-
-.Santorelli__nav-option {
-  width: stretch;
-  height: auto;
-  border: 1px solid;
-  border-radius: 50%;
-  padding: 1rem;
-  position: relative;
-  width: 2rem;
-  height: 0.5rem;
-  margin-top: 0.5rem;
-
-  .story-icon {
-    font-size: 4rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    margin-top: -2rem;
-  }
-}
-
 .Santorelli__nav-text.tablet-only.description {
   margin: 0 auto 0 2rem;
 }
 
 @media screen and (min-width: 1024px){
-  .Santorelli__navigator {
-    grid-template-columns: repeat(2, 3rem 1fr);
-    grid-template-rows: 6rem;
-    grid-column-gap: 1rem;
-    justify-content: space-between;
-    display: grid;
-    margin: 4rem;
+  .Santorelli__router {
+    max-width: 60vw;
+    margin: auto;
   }
 }
 

@@ -1,0 +1,86 @@
+.AppContainer__styles {
+  height: 100%;
+  background-color: var(--white);
+  transition: 0.5s;
+  color: var(--black);
+
+  // Sidenav
+  .GavSidenav {
+    .GavSidenav__container {
+      background-color: var(--darkgreen);
+      box-shadow: 0px 3px 3px var(--darkgreen);
+      color: var(--white);
+    }
+    
+    .GavSidenav__button {
+      border-color: rgba(var(--white), 0.2);
+      background-color: transparent;
+      color: var(--white);
+    }
+    
+    .GavSidenav__sub-button {
+      border-color: rgba(var(--white), 0.2);
+      background-color: transparent;
+      color: var(--white);
+    
+      &:focus ::before {
+        border-color: var(--white);
+      }
+    }
+    
+    .sdn--active {
+      border-color: var(--white);
+      text-shadow: 0 0 5px var(--white);
+    }
+  }
+
+  // Header
+  .cv-header {
+    background-color: var(--darkgreen);
+    box-shadow: 0px 0 3px var(--darkgreen);
+    color: var(--white);
+  }
+
+  // Text
+  .title {
+    text-align: center;
+    color: var(--green);
+    font-size: 1.6rem;
+  }
+  
+  .cv-link {
+    color: var(--green);
+    text-decoration: none;
+  }
+
+  .description {
+    text-align: justify;
+    color: var(--black);
+    margin: 0 0.5rem;
+  }
+
+  // Elements
+  .story-teller {
+    color: var(--blue);
+    border-color: var(--blue);
+
+    &.active {
+      color: var(--darkgreen);
+      border-color: var(--darkgreen);
+
+      .story-icon {
+        color: var(--darkgreen);
+      }
+    }
+  }
+
+  .tablet-only {
+    display: none;
+  }
+
+  @media screen and (min-width: 724px) {
+    .tablet-only {
+      display: inline-block;
+    }
+  }
+}
